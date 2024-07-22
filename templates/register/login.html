@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="logo">HUSTLE</div>
+        <div class="form-container">
+            <form class="form-layout" action="/login" method="POST">
+                <label for="name">Username:</label><br>
+                <input type="text" id="name" name="name" required><br>
+
+                <label for="email">Email: </label><br>
+                <input type="text" id="email" name="email" required><br>
+    
+                <label for="password">Password:</label><br>
+                <input type="password" id="password" name="password" required><br>
+    
+                <input type="submit" value="login">
+                <a class="link" href="signup.html">Signup</a>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
