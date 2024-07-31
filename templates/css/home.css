@@ -1,0 +1,152 @@
+body {
+    background-color: darkgrey;
+    font-family: 'Courier New', Courier, monospace;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+a {
+    color: white;
+}
+
+.container {
+    position: relative;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+}
+
+.image-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.home-pic {
+    width: 100vw;
+    height: auto;
+}
+
+.navbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background: transparent;
+}
+
+.navbar .logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+}
+
+.navlinks ul {
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.navlinks li {
+    margin: 0 15px;
+}
+
+.navlinks a {
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+}
+
+.registration ul {
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+    margin: 20px;
+}
+
+.registration li {
+    margin-left: 10px;
+}
+
+.registration a {
+    text-decoration: none;
+    color: white;
+    background-color: black;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 15px;
+}
+
+.transparent-select {
+    position: absolute;
+    top: 75%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 40%;
+    padding: 10px;
+    font-size: 18px;
+    color: grey;
+    background-color: rgba(255, 255, 255, 0.2);
+    border: 1px solid white;
+    border-radius: 5px;
+    appearance: none;
+}
+
+.random-jobs, .curr-jobs {
+    padding: 20px;
+    background-color: darkgrey;
+    margin: 20px 0;
+    border: 1px solid darkgrey;
+}
+
+
+
+.footer {
+    display: flex; /* Use Flexbox */
+    justify-content: space-between; /* Space between child containers */
+    align-items: flex-start; /* Align items to the top */
+    background-color: #1e1e1e;
+    color: white;
+    padding: 20px;
+    width: 100%; /* Full width of the viewport */
+    height: auto; /* Adjust the height as needed */
+    margin-top: auto; /* Push footer to the bottom */
+}
+
+footer {
+    display: flex; /* Apply Flexbox */
+    width: 100%; /* Full width to align with the .footer */
+    gap: 20px; /* Space between containers */
+}
+
+.about-container, .links-container, .hustle-contact-container {
+    flex: 1; /* Each container takes equal space */
+    margin-right: 20px; /* Space between containers, adjust if needed */
+}
+
+.about-container:last-child, 
+.links-container:last-child {
+    margin-right: 0; /* Remove margin from the last container */
+}
+
+/* Optional: To style the heading and list items */
+h1 {
+    margin-top: 0;
+}
+
+ul {
+    padding: 0;
+    list-style-type: none;
+}
+
+li {
+    margin-bottom: 10px;
+}
+
+

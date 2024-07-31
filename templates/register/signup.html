@@ -4,25 +4,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Signup</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/register/style.css">
 </head>
 <body>
     <div class="container">
-        <div class="logo">HUSTLE</div>
+        <div class="logo">HustleJobs</div>
         <div class="form-container">
             <form class="form-layout" action="/signup" method="POST">
-                <label for="name"> Username: </label><br>
+                <label for="name"> Name: </label><br>
                 <input type="text" id="name" name="name" required><br>
 
                 <label for="email">Email: </label><br>
-                <input type="text" id="email" name="email" required><br>
+                <input type="email" id="email" name="email" required><br>
     
                 <label for="password"> Password: </label><br>
                 <input type="password" id="password" name="password" required><br>
 
+                <label for="acc_type">Account Type:</label><br>
+                <div class="account-buttons">
+                    <button type="button" class="account-button" id="employer">Employer</button>
+                    <button type="button" class="account-button" id="employee">Employee</button>
+                </div><br>
+                
+                <input type="hidden" id="acc_type" name="acc_type" value="">
                 <input type="submit" value="Signup">
             </form>
         </div>
     </div>
+    <script>
+        document.getElementById('employer').addEventListener('click', function() {
+            document.getElementById('acc_type').value = 'employer';
+        });
+        document.getElementById('employee').addEventListener('click', function() {
+            document.getElementById('acc_type').value = 'employee';
+        });
+    </script>
 </body>
 </html>

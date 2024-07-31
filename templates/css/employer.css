@@ -1,0 +1,154 @@
+body {
+    background-color: darkgrey;
+    margin: 0;
+    padding: 0;
+    font-family: 'Courier New', Courier, monospace;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ensures the body takes up at least the full viewport height */
+}
+
+.container {
+    position: relative;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    z-index: 1;
+}
+
+.navbar {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 20px;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+}
+
+.navbar, .logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.navlinks ul,
+.registration ul {
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.navlinks li,
+.registration li {
+    margin: 0 15px;
+}
+
+.navlinks a {
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+}
+
+.registration a {
+    text-decoration: none;
+    color: white;
+    background-color: black;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 12px;
+    margin-right: 20px;
+}
+
+.searchbar {
+    display: flex;
+    justify-content: center;
+    padding: 15px;
+    background-color: darkgrey; /* Background color for the search bar */
+    margin-top: 20px; /* Space between the navbar and the search bar */
+}
+
+.select {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.job-select {
+    font-size: 16px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 500px; /* Adjust width as needed */
+}
+
+.search-button {
+    font-size: 15px;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    background-color: #333;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.search-button:hover {
+    background-color: #555;
+}
+
+.job {
+    background-color: #f0f0f0;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin: 20px auto;
+    width: 100%; /* Adjust to take up the available width */
+    max-width: 1200px; /* Maximum width for larger screens */
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    background-color: #1e1e1e;
+    color: white;
+    padding: 20px;
+    width: 100%;
+    height: auto;
+    margin-top: auto; /* Push footer to the bottom */
+}
+
+footer {
+    display: flex;
+    width: 100%;
+    gap: 20px;
+}
+
+.about-container, .links-container, .hustle-contact-container {
+    flex: 1;
+    margin-right: 20px;
+}
+
+.about-container:last-child,
+.links-container:last-child {
+    margin-right: 0;
+}
+
+h1 {
+    margin-top: 0;
+}
+
+ul {
+    padding: 0;
+    list-style-type: none;
+}
+
+li {
+    margin-bottom: 10px;
+}
+
+a {
+    color: white;
+}
