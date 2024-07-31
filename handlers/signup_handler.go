@@ -1,7 +1,6 @@
 package handlers
 
 import (
-	"fmt"
 	"job/db"
 	"log"
 	"net/http"
@@ -52,9 +51,9 @@ func SignupHandler(c *gin.Context) {
 
 	switch newUser.AccountType {
 	case "employer":
-		fmt.Println("will redirect to employer page.")
+		c.Redirect(http.StatusSeeOther, "/home")
 	case "employee":
-		fmt.Println("will redirect to employee page.")
+		c.Redirect(http.StatusSeeOther, "/home")
 	}
 
 }

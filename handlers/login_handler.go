@@ -46,5 +46,10 @@ func LoginHandler(c *gin.Context) {
 	}
 
 	// TODO: redirect to the assigned page
-	c.JSON(http.StatusOK, gin.H{"message": "login successfull"})
+	switch user.AccountType {
+	case "employer":
+		c.Redirect(http.StatusSeeOther, "/home")
+	case "employee":
+		c.Redirect(http.StatusSeeOther, "/home")
+	}
 }

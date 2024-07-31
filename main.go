@@ -11,7 +11,7 @@ func main() {
 
 	r := gin.Default()
 
-	r.Static("/static", "./templates/css")
+	r.Static("/static", "./templates")
 
 	r.LoadHTMLGlob("templates/*.html")
 
@@ -29,7 +29,16 @@ func main() {
 
 	r.POST("/signup", handlers.SignupHandler)
 
+	r.GET("/home", handlers.Homepage)
+	r.GET("/jobs", handlers.JobPage)
+	r.GET("/employer", handlers.EmployerPage)
+	r.GET("/employee", handlers.EmployeePage)
 
+	r.GET("/contact", func(c *gin.Context) {
+		c.File("templates/contact.html")
+	})
 
-	log.Fatal(r.Run(":8080"))
+	r.POST("/contact", handlers.ContactPage)
+
+	log.Fatal(r.Run(":9000"))
 }
