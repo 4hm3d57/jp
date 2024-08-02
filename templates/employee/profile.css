@@ -60,7 +60,7 @@ body {
 
 .details-container {
     display: flex;
-    margin-top: 60px; /* Offset to account for navbar height */
+    margin-top: -40px; /* Offset to account for navbar height */
     padding: 20px;
     background-color: darkgrey;
     height: calc(100vh - 60px); /* Full height minus navbar */
@@ -74,6 +74,7 @@ body {
     overflow-x: hidden;
     border-radius: 10px 10px 10px 10px;
     margin-left: 40px;
+    margin-top: 50px;
 }
 
 .sidebar ul {
@@ -104,17 +105,25 @@ body {
 .details {
     flex: 1;
     background-color: darkgrey;
-    padding: 20px;
+    margin-top: 0;
     border-radius: 10px;
     display: flex;
     flex-direction: column;
     align-items: center; /* Center content horizontally */
-    margin-right: 40px;   
+    margin-right: 40px;  
+    margin-top: 0; 
 }
 
 .details h1{
     font-size: 50px;
     font-family: 'Courier New', Courier, monospace;
+}
+
+button {
+    width: 100px;
+    cursor: pointer;
+    border-radius: 4px;
+    margin-left: auto;
 }
 
 form {
@@ -160,6 +169,7 @@ textarea {
 .about-me-section {
     margin-top: 20px;
 }
+
 
 .footer {
     display: flex;

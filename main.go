@@ -45,5 +45,5 @@ func main() {
 	})
 	r.POST("/profile", handlers.ProfileHandler)
 
-	log.Fatal(r.Run(":9000"))
+	log.Fatal(r.Run(":8000"))
 }
