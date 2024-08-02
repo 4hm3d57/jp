@@ -40,5 +40,10 @@ func main() {
 
 	r.POST("/contact", handlers.ContactPage)
 
+	r.GET("/profile", func(c *gin.Context) {
+		c.File("templates/employee/profile.html")
+	})
+	r.POST("/profile", handlers.ProfileHandler)
+
 	log.Fatal(r.Run(":9000"))
 }
