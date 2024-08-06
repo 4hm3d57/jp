@@ -48,42 +48,42 @@
         </div>
 
         <div class="details">
-            <h1>Language Proficiency</h1>
-            <form action="/language" method="POST">
+            <h1>Professional Qualification</h1>
+            <form action="/profession" method="POST">
                 <div class="form-row">
-                    <label for="language">Language</label><br>
-                    <input type="text" id="language" name="language">
+                    <div class="County-section">
+                        <select class="county-select" name="county">
+                            <option value="">-Select category-</option>
+                            <option value="Nairobi">Nairobi</option>
+                            <option value="Kiambu">Kiambu</option>
+                            <!-- Add other options here -->
+                        </select>
+                    </div>
                 </div>
 
                 <div class="form-row">
-                    <label for="speak">Speak</label><br>
-                    <select class="language-select" name="language">
-                        <option value="fair">Fair</option>
-                        <option value="good">Good</option>
-                        <option value="verygood">very Good</option>
-                        <!-- Add other options here -->
-                    </select>
+                    <div class="institution-section">
+                        <label for="institution">Institution Name</label>
+                        <input type="text" id="institution" name="institution">
+                    </div>
                 </div>
 
                 <div class="form-row">
-                    <label for="read">Read</label><br>
-                    <select class="language-select" name="language">
-                        <option value="fair">Fair</option>
-                        <option value="good">Good</option>
-                        <option value="verygood">very Good</option>
-                        <!-- Add other options here -->
-                    </select>
+                    <div class="course-section">
+                        <label for="course-lbl">Course Title</label>
+                        <input type="text" id="course" name="course">
+                    </div>
                 </div>
 
                 <div class="form-row">
-                    <label for="write">Write</label><br>
-                    <select class="language-select" name="language">
-                        <option value="fair">Fair</option>
-                        <option value="good">Good</option>
-                        <option value="verygood">very Good</option>
-                        <!-- Add other options here -->
-                    </select>
+                    <div class="Timeframe-section">
+                        <label for="timeframe">Time frame</label>
+                        <input type="text" id="time-frame" name="time-frame">
+                    </div>
+                    
                 </div>
+
+                
 
                 <button type="submit">Submit</button>
             </form>

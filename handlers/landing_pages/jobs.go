@@ -1,4 +1,4 @@
-package handlers
+package landing_pages
 
 import (
 	"github.com/gin-gonic/gin"

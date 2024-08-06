@@ -1,10 +1,11 @@
-package handlers
+package register
 
 import (
 	"job/db"
 	"log"
 	"net/http"
 
+	"github.com/gin-contrib/sessions"
 	"github.com/gin-gonic/gin"
 )
 
@@ -32,7 +33,7 @@ func LoginHandler(c *gin.Context) {
 		return
 	}
 
-	user, err := db.GetUser(email, password)
+	user, err := db.GetUserLogin(email, password)
 	if err != nil {
 		c.JSON(http.StatusInternalServerError, gin.H{"error": "error retrieving user"})
 		log.Printf("Error retrieving user: %v", err)
@@ -44,6 +45,10 @@ func LoginHandler(c *gin.Context) {
 		c.JSON(http.StatusUnauthorized, gin.H{"error": "Invalid email or password"})
 		return
 	}
+
+	session := sessions.Default(c)
+	session.Set("userID", user.ID.Hex())
+	session.Save()
 
 	// TODO: redirect to the assigned page
 	switch user.AccountType {

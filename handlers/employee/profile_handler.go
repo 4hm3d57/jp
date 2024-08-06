@@ -1,10 +1,13 @@
-package handlers
+package employee
 
 import (
-	"github.com/gin-gonic/gin"
 	"job/db"
 	"log"
 	"net/http"
+
+	"github.com/gin-contrib/sessions"
+	"github.com/gin-gonic/gin"
+	"go.mongodb.org/mongo-driver/bson/primitive"
 )
 
 func ProfileHandler(c *gin.Context) {
@@ -43,7 +46,12 @@ func ProfileHandler(c *gin.Context) {
 		return
 	}
 
-	newProfile := db.Profile{
+	session := sessions.Default(c)
+	userID := session.Get("userID").(string)
+	oid, _ := primitive.ObjectIDFromHex(userID)
+
+	profile := db.Profile{
+		ID:           oid,
 		First_name:   f_name,
 		Last_name:    l_name,
 		Born:         born,
@@ -59,11 +67,20 @@ func ProfileHandler(c *gin.Context) {
 		About:        about,
 	}
 
-	err = db.InsertProfile(newProfile)
+	err = db.InsertProfile(profile)
 	if err != nil {
 		c.JSON(http.StatusInternalServerError, gin.H{"error": "error adding user profile"})
 		log.Printf("error adding user profile: %s", err)
 		return
 	}
+
+	err = db.UpdateProfile(profile)
+	if err != nil {
+		c.JSON(http.StatusInternalServerError, gin.H{"error": "error updating user profile"})
+		log.Printf("error updating user profile: %s", err)
+		return
+	}
+
+	c.Redirect(http.StatusFound, "/profile")
 
 }

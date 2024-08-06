@@ -108,6 +108,35 @@ body {
     max-width: 1200px; /* Maximum width for larger screens */
 }
 
+.card {
+    background: darkgrey;
+    border-radius: 8px;
+    margin: 20px;
+    overflow: hidden;
+    transition: transform 0.3s;
+    width: 150px;
+    height: 150px;
+    text-align: center;
+    padding: 5px;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+
+.details {
+    padding: 10px;
+}
+
+.details p {
+    font-size: 10px;
+    color: white;
+    margin: 3px 0;
+}
+
+
+
 .footer {
     display: flex;
     justify-content: space-between;

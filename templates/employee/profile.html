@@ -35,15 +35,15 @@
         <div class="sidebar">
             <ul>
                 <li><a href="/profile"><i>Profile</i></a></li>
-                <li><a href="/admin-message"><i>Change Password</i></a></li>
-                <li><a href="/admin-users"><i>Professional Qualification</i></a></li>
-                <li><a href="/admin-all-books"><i>Language Proficiency</i></a></li>
-                <li><a href="/admin-book"><i>Training & workshop</i></a></li>
-                <li><a href="/admin-request"><i>Referees</i></a></li>
-                <li><a href="/admin-recomm"><i>Academic Qualification</i></a></li>
-                <li><a href="/admin-curr"><i>Working Experience</i></a></li>
-                <li><a href="/admin-curr"><i>Applied Jobs</i></a></li>
-                <li><a href="/admin-curr"><i>Logout</i></a></li>
+                <li><a href="/change-pass"><i>Change Password</i></a></li>
+                <li><a href="/profession"><i>Professional Qualification</i></a></li>
+                <li><a href="/language"><i>Language Proficiency</i></a></li>
+                <li><a href="/training"><i>Training & workshop</i></a></li>
+                <li><a href="/referees"><i>Referees</i></a></li>
+                <li><a href="/academics"><i>Academic Qualification</i></a></li>
+                <li><a href="/experience"><i>Working Experience</i></a></li>
+                <li><a href="/applied-jobs"><i>Applied Jobs</i></a></li>
+                <li><a href="/logout"><i>Logout</i></a></li>
             </ul>
         </div>
 
@@ -53,7 +53,7 @@
                 <div class="form-row">
                     <div class="first_name-section">
                         <label for="firstname">First Name</label>
-                        <input type="text" id="firstname" name="f_name" required>
+                        <input type="text" id="firstname" name="f_name" value="{{.user.Name}}" required>
                     </div>
                     <div class="last_name-section">
                         <label for="lastname">Last Name</label>
@@ -68,7 +68,7 @@
                     </div>
                     <div class="email-section">
                         <label for="email">Email</label>
-                        <input type="email" id="email" name="email" required>
+                        <input type="email" id="email" name="email" value="{{.user.Email}}" required>
                     </div>
                 </div>
 

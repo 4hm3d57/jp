@@ -1,10 +1,11 @@
-package handlers
+package register
 
 import (
 	"job/db"
 	"log"
 	"net/http"
 
+	"github.com/gin-contrib/sessions"
 	"github.com/gin-gonic/gin"
 )
 
@@ -46,6 +47,10 @@ func SignupHandler(c *gin.Context) {
 		log.Printf("error adding user to db: %v", err)
 		return
 	}
+
+	session := sessions.Default(c)
+	session.Set("userID", newUser.ID.Hex())
+	session.Save()
 
 	// TODO: redirect to the assigned page
 
