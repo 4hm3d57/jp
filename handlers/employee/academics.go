@@ -48,6 +48,6 @@ func AcademicsHandler(c *gin.Context) {
 		return
 	}
 
-	c.Redirect(http.StatusFound, "/")
+	c.Redirect(http.StatusFound, "/academics")
 
 }

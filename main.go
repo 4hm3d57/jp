@@ -27,7 +27,9 @@ func main() {
 
 	r.Static("/register", "./templates/register")
 
-	r.GET("/", func(c *gin.Context) {
+	r.GET("/", landingPages.LandingHomepage)
+
+	r.GET("/login", func(c *gin.Context) {
 		c.File("templates/register/login.html")
 	})
 
@@ -102,5 +104,5 @@ func main() {
 	// logout
 	r.GET("/logout", employeeHandler.LogoutHandler)
 
-	log.Fatal(r.Run(":8000"))
+	log.Fatal(r.Run(":9000"))
 }

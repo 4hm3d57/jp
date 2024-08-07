@@ -43,5 +43,5 @@ func RefereesHandler(c *gin.Context) {
 		return
 	}
 
-	c.Redirect(http.StatusFound, "/referee")
+	c.Redirect(http.StatusFound, "/referees")
 }

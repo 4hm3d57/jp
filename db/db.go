@@ -281,6 +281,28 @@ func GetUserSignup(name, email string) (*User, error) {
 	return &profile, nil
 }
 
+func GetAllUser() ([]User, error) {
+
+	client, userCollection, err := UserDB()
+	if err != nil {
+		return nil, err
+	}
+	defer client.Disconnect(context.Background())
+
+	var user []User
+	cur, err := userCollection.Find(context.Background(), bson.M{})
+	if err != nil {
+		return nil, err
+	}
+
+	if err = cur.All(context.Background(), &user); err != nil {
+		return nil, err
+	}
+
+	return user, nil
+
+}
+
 func GetPass(password string) (*User, error) {
 
 	client, userCollection, err := UserDB()

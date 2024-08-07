@@ -22,12 +22,6 @@
                     <li><a href="/contact">Contact Us</a></li>
                 </ul>
             </div>
-            <div class="registration">
-                <ul>
-                    <li><a href="/">Login</a></li>
-                    <li><a href="/signup">Signup</a></li>      
-                </ul>
-            </div>
         </div>
     </div>
 
@@ -48,11 +42,11 @@
         </div>
 
         <div class="details">
-            <h1>Profile</h1>
+            <h1>Academics</h1>
             <form action="/academics" method="POST">
                 <div class="form-row">
                     <label for="ed-level">Education Level</label><br>
-                    <select class="ed-level-select" name="ed_level">
+                    <select class="ed-level-select" id="ed_level" name="ed_level">
                         <option value="degree">Degree</option>
                         <option value="diploma">Diploma</option>
                         <option value="masters">Masters Degree</option>
@@ -65,18 +59,18 @@
                 <div class="form-row">
                     <div class="institution-section">
                         <label for="institution-label">Institution Name</label><br>
-                        <input type="text" id="a_institution" name="a_institution" placeholder="Enter institution name">
+                        <input type="text" id="institution" name="institution" placeholder="Enter institution name">
                     </div>
                 </div>
 
                 <div class="form-row">
                     <div class="course-section">
                         <label for="course-label">Course Title</label><br>
-                        <input type="text" id="a_course" name="a_course" placeholder="Enter your course name" required>
+                        <input type="text" id="course" name="course" placeholder="Enter your course name" required>
                     </div>
                     <div class="timeframe-section">
                         <label for="time-frame label">Time Frame</label><br>
-                        <input type="text" id="a_timeframe" name="a_timeframe" placeholder="e.g 2021 to 2025" required>
+                        <input type="text" id="timeframe" name="timeframe" placeholder="e.g 2021 to 2025" required>
                     </div>
                 </div>
 

@@ -55,6 +55,6 @@ func LoginHandler(c *gin.Context) {
 	case "employer":
 		c.Redirect(http.StatusSeeOther, "/home")
 	case "employee":
-		c.Redirect(http.StatusSeeOther, "/profile")
+		c.Redirect(http.StatusSeeOther, "/home")
 	}
 }
