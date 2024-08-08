@@ -93,8 +93,24 @@ type Train struct {
 	Timeframe   string
 }
 
-// db connection functions
+type EmployerProfile struct {
+	ID          primitive.ObjectID
+	Name        string
+	Established string
+	Type        string
+	People      string
+	Website     string
+	City        string
+	Street      string
+	Zip         string
+	Phone       string
+	Email       string
+	Background  string
+	Service     string
+	Expertise   string
+}
 
+// db connection functions
 func UserDB() (*mongo.Client, *mongo.Collection, error) {
 
 	client, err := mongo.Connect(context.Background(), options.Client().ApplyURI("mongodb://localhost:27017"))
@@ -205,6 +221,19 @@ func TrainDB() (*mongo.Client, *mongo.Collection, error) {
 	trainCollection := client.Database("jp").Collection("training")
 
 	return client, trainCollection, nil
+
+}
+
+func EmpProfile() (*mongo.Client, *mongo.Collection, error) {
+
+	client, err := mongo.Connect(context.Background(), options.Client().ApplyURI("mongodb://localhost:27017"))
+	if err != nil {
+		return nil, nil, err
+	}
+
+	empCollection := client.Database("jp").Collection("employer_profile")
+
+	return client, empCollection, nil
 
 }
 
@@ -528,6 +557,24 @@ func InsertTrainData(train Train) error {
 	defer client.Disconnect(context.Background())
 
 	_, err = trainCollection.InsertOne(context.Background(), train)
+	if err != nil {
+		return err
+	}
+
+	return nil
+}
+
+// employee profile
+
+func InsertEmployerProfile(profile EmployerProfile) error {
+
+	client, empCollection, err := EmpProfile()
+	if err != nil {
+		return err
+	}
+	defer client.Disconnect(context.Background())
+
+	_, err = empCollection.InsertOne(context.Background(), profile)
 	if err != nil {
 		return err
 	}
