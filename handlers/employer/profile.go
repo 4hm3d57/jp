@@ -29,6 +29,7 @@ func EmployerProfileHandler(c *gin.Context) {
 	web := c.PostForm("web")
 	city := c.PostForm("city")
 	street := c.PostForm("street")
+	county := c.PostForm("county")
 	zip := c.PostForm("zip")
 	phone := c.PostForm("phone")
 	email := c.PostForm("email")
@@ -44,6 +45,7 @@ func EmployerProfileHandler(c *gin.Context) {
 		Website:     web,
 		City:        city,
 		Street:      street,
+		County:      county,
 		Zip:         zip,
 		Phone:       phone,
 		Email:       email,

@@ -102,12 +102,27 @@ type EmployerProfile struct {
 	Website     string
 	City        string
 	Street      string
+	County      string
 	Zip         string
 	Phone       string
 	Email       string
 	Background  string
 	Service     string
 	Expertise   string
+}
+
+type Postjob struct {
+	ID             primitive.ObjectID
+	Title          string
+	City           string
+	County         string
+	Category       string
+	Date           string
+	Type           string
+	Experience     string
+	Description    string
+	Responsibility string
+	Requirements   string
 }
 
 // db connection functions
@@ -224,7 +239,7 @@ func TrainDB() (*mongo.Client, *mongo.Collection, error) {
 
 }
 
-func EmpProfile() (*mongo.Client, *mongo.Collection, error) {
+func EmpProfileDB() (*mongo.Client, *mongo.Collection, error) {
 
 	client, err := mongo.Connect(context.Background(), options.Client().ApplyURI("mongodb://localhost:27017"))
 	if err != nil {
@@ -234,6 +249,19 @@ func EmpProfile() (*mongo.Client, *mongo.Collection, error) {
 	empCollection := client.Database("jp").Collection("employer_profile")
 
 	return client, empCollection, nil
+
+}
+
+func PostJobDB() (*mongo.Client, *mongo.Collection, error) {
+
+	client, err := mongo.Connect(context.Background(), options.Client().ApplyURI("mongodb://localhost:27017"))
+	if err != nil {
+		return nil, nil, err
+	}
+
+	postCollection := client.Database("jp").Collection("post-job")
+
+	return client, postCollection, nil
 
 }
 
@@ -564,11 +592,11 @@ func InsertTrainData(train Train) error {
 	return nil
 }
 
-// employee profile
+// employee profile db
 
 func InsertEmployerProfile(profile EmployerProfile) error {
 
-	client, empCollection, err := EmpProfile()
+	client, empCollection, err := EmpProfileDB()
 	if err != nil {
 		return err
 	}
@@ -580,4 +608,23 @@ func InsertEmployerProfile(profile EmployerProfile) error {
 	}
 
 	return nil
+}
+
+// post job db
+
+func InsertJob(postjob Postjob) error {
+
+	client, postCollection, err := PostJobDB()
+	if err != nil {
+		return err
+	}
+	defer client.Disconnect(context.Background())
+
+	_, err = postCollection.InsertOne(context.Background(), postjob)
+	if err != nil {
+		return err
+	}
+
+	return nil
+
 }

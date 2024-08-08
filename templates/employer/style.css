@@ -1,0 +1,211 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Courier New', Courier, monospace;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: darkgrey;
+    overflow-x: hidden;
+}
+
+.container {
+    position: relative;
+    width: 100%;
+}
+
+.navbar {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+}
+
+.navbar .logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.navlinks ul,
+.registration ul {
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.navlinks li,
+.registration li {
+    margin: 0 15px;
+}
+
+.navlinks a {
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+}
+
+.registration a {
+    text-decoration: none;
+    color: white;
+    background-color: black;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 12px;
+    margin-right: 20px;
+}
+
+.details-container {
+    display: flex;
+    margin-top: -40px; /* Offset to account for navbar height */
+    padding: 20px;
+    background-color: darkgrey;
+    height: calc(100vh - 60px); /* Full height minus navbar */
+}
+
+.sidebar {
+    width: 300px;
+    background: #042331;
+    height: 70%; /* Full height */
+    overflow-y: auto; /* Scroll if content overflows */
+    overflow-x: hidden;
+    border-radius: 10px 10px 10px 10px;
+    margin-left: 40px;
+    margin-top: 50px;
+}
+
+.sidebar ul {
+    padding: 0;
+    list-style-type: none;
+    margin: 0;
+    padding: 20px 20px;
+}
+
+.sidebar ul a {
+    display: block;
+    width: 100%;
+    height: auto;
+    line-height: 40px;
+    font-size: 15px;
+    color: white;
+    padding-left: 10px;
+    /*border-bottom: 1px solid #063146;*/
+    transition: background 0.3s;
+}
+
+.sidebar ul a:hover {
+    background: #06536b;
+    width: 100%;
+    border-radius: 5px;
+}
+
+.details {
+    flex: 1;
+    background-color: darkgrey;
+    margin-top: 0;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center content horizontally */
+    margin-right: 40px;  
+    margin-top: 0; 
+}
+
+.details h1{
+    font-size: 50px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+button {
+    width: 100px;
+    cursor: pointer;
+    border-radius: 4px;
+    margin-left: auto;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    width: 100%; /* Full width */
+    max-width: 800px; /* Limit width if desired */
+}
+
+.form-row {
+    display: flex;
+    gap: 70px;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.form-row div {
+    flex: 1;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="email"],
+select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.about-me-section {
+    margin-top: 20px;
+}
+
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    background-color: #1e1e1e;
+    color: white;
+    padding: 20px;
+    width: 100%;
+    height: auto;
+    margin-top: auto; /* Push footer to the bottom */
+   
+}
+
+footer {
+    display: flex;
+    width: 100%;
+    gap: 20px;
+}
+
+.about-container, .links-container, .hustle-contact-container {
+    flex: 1;
+    margin-right: 20px;
+}
+
+.about-container:last-child,
+.links-container:last-child,
+.hustle-contact-container:last-child {
+    margin-right: 0;
+}
+
+
+a {
+    color: white;
+}
+
+ul {
+    list-style-type: none;
+}

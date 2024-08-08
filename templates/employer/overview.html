@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/employee/style.css">
+    <title>profile</title>
+</head>
+<body>
+    
+    <div class="container">
+        <div class="navbar">
+            <div class="logo">
+                <a href="/home">HustleJobs</a>
+            </div>
+            <div class="navlinks">
+                <ul>
+                    <li><a href="/home">Home</a></li>
+                    <li><a href="/jobs">Job List</a></li>
+                    <li><a href="/employer">Employer</a></li>
+                    <li><a href="/employee">Employee</a></li>
+                    <li><a href="/contact">Contact Us</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="details-container">
+        <div class="sidebar">
+            <ul>
+                <li><a href="/employer-profile"><i>Profile</i></a></li>
+                <li><a href="/employer-change-pass"><i>Change Password</i></a></li>
+                <li><a href="/overview"><i>Company Overview</i></a></li>
+                <li><a href="/posted-jobs"><i>Posted Jobs</i></a></li>
+                <li><a href="/logout"><i>Logout</i></a></li>
+            </ul>
+        </div>
+
+        <div class="details">
+            <h1>Change Password</h1>
+            <form action="/change-pass" method="POST">
+                <div class="form-row">
+                    <div class="curr-pass-section">
+                        <label for="current-pass">Current Password</label>
+                        <input type="password" id="curr_pass" name="curr_pass" required>
+                    </div>
+                </div>
+
+
+                <div class="form-row">
+                    <div class="new-pass-section">
+                        <label for="new-pass">New Password</label>
+                        <input type="password" id="new_pass" name="new_pass" required>
+                    </div>
+                </div>
+
+                <button type="submit">Change</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="footer">
+        <footer>
+            <div class="about-container">
+                <h1 class="about-heading">About Hustle Jobs</h1>
+                <p>Hustle Jobs is a job portal,<br> online job management system<br> developed by Hustle ltd.</p>
+            </div>
+            
+            <div class="links-container">
+                <h1 class="quick-links">Quick Links</h1>
+                <ul>
+                    <li><a href="/home">Home</a></li>
+                    <li><a href="/jobs">Job List</a></li>
+                    <li><a href="/employer">Employer</a></li>
+                    <li><a href="/employee">Employee</a></li>
+                    <li><a href="/contact">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <div class="hustle-contact-container">
+                <h1 class="hustle-contacts">Hustle Job Contacts</h1>
+                <p>Address : Nairobi, Nairobi CBD PO.BOX 3057</p>
+                <p>Email : <a href="mailto:hustlejobs@gmail.com">hustlejobs@gmail.com</a></p>
+                <p>Phone : <a href="tel:+254736431233">+254 736 431 233</a></p>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

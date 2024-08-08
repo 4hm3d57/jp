@@ -8,6 +8,7 @@ import (
 	"github.com/gin-gonic/gin"
 
 	employeeHandler "job/handlers/employee"
+	employerHandler "job/handlers/employer"
 	landingPages "job/handlers/landing_pages"
 	register "job/handlers/register"
 )
@@ -100,6 +101,20 @@ func main() {
 	})
 
 	r.POST("/training", employeeHandler.TrainingHandler)
+
+	// employer profile
+	r.GET("/employer-profile", func(c *gin.Context) {
+		c.File("templates/employer/profile.html")
+	})
+
+	r.POST("/employer-profile", employerHandler.EmployerProfileHandler)
+
+	// post job
+	r.GET("/post-job", func(c *gin.Context) {
+		c.File("templates/employer/postjob.html")
+	})
+
+	r.POST("/post-job", employerHandler.PostJobHandler)
 
 	// logout
 	r.GET("/logout", employeeHandler.LogoutHandler)
