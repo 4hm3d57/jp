@@ -26,7 +26,9 @@ func main() {
 
 	r.LoadHTMLGlob("templates/*.html")
 
-	r.Static("/register", "./templates/register")
+	// r.Static("/register", "./templates/register")
+	// r.Static("/employer", "./templates/employer")
+	// r.Static("/employee", "./templates/employee")
 
 	r.GET("/", landingPages.LandingHomepage)
 

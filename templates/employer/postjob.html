@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/static/employee/style.css">
+    <link rel="stylesheet" href="/static/employer/style.css">
     <title>profile</title>
 </head>
 <body>
@@ -22,22 +22,27 @@
                     <li><a href="/contact">Contact Us</a></li>
                 </ul>
             </div>
+            <div class="registration">
+                <ul>
+                    <li><a href="/logout">Logout</a></li>            
+                 </ul>
+            </div>
         </div>
     </div>
 
     <div class="details-container">
         <div class="sidebar">
             <ul>
-                <li><a href="/profile"><i>Profile</i></a></li>
-                <li><a href="/change-pass"><i>Change Password</i></a></li>
-                <li><a href="/profession"><i>Company Overview</i></a></li>
-                <li><a href="/language"><i>Posted Jobs</i></a></li>
-                <li><a href="/training"><i>Logout</i></a></li>
+                <li><a href="/employer-profile"><i>Profile</i></a></li>
+                <li><a href="/employer-change-pass"><i>Change Password</i></a></li>
+                <li><a href="/overview"><i>Company Overview</i></a></li>
+                <li><a href="/post-job"><i>Post a job</i></a></li>
+                <li><a href="/posted-jobs"><i>Posted Jobs</i></a></li>
             </ul>
         </div>
 
         <div class="details">
-            <h1>Profile</h1>
+            <h1>Post a job</h1>
             <form action="/profile" method="POST">
                 <div class="form-row">
                     <div class="job-title-section">
