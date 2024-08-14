@@ -26,7 +26,7 @@ This project uses Go and Gin for the backend, and MongoDB as the database.
 ### 1. Clone the Repository
 ``` bash
 git clone https://github.com/4hm3d57/jp.git
-cd online-job-portal
+cd jp
 
 #installing dependencies
 go mod tidy
