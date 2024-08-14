@@ -1,6 +1,6 @@
 # Online Job Portal
 
-Welcome to the Online Job Portal! This web application allows job seekers and employers to interact with each other. 
+Welcome to the JP an online job portal! This web application allows job seekers and employers to interact with each other. 
 Job seekers can register, create and manage their profiles, and apply for jobs. Employers can post job listings and manage their profiles. 
 This project uses Go and Gin for the backend, and MongoDB as the database.
 
@@ -38,6 +38,9 @@ go run main.go
 ### 2. Setup MongoDB
 - Ensure MongoDB is installed and running on your local machine. You can download and install MongoDB from the official MongoDB website.
 - By default, MongoDB runs on mongodb://localhost:27017. If you are using a different configuration or a cloud MongoDB service, update your connection settings accordingly in your code.
+
+### 3. Access the Application:
+- Open your web browser and go to http://localhost:9000 to see the running application.
 
 
 ## Final Notes
