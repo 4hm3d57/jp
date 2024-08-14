@@ -32,7 +32,7 @@ cd online-job-portal
 go mod tidy
 
 # running the applicatoin
-go run main.go
+go build .
 ```
 
 ### 2. Setup MongoDB
