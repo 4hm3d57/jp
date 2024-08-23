@@ -276,6 +276,7 @@ func InsertUser(user User) error {
 	defer client.Disconnect(context.Background())
 
 	user.ID = primitive.NewObjectID()
+
 	_, err = userCollection.InsertOne(context.Background(), user)
 	if err != nil {
 		return err

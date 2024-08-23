@@ -23,7 +23,6 @@ func AuthMiddleWare() gin.HandlerFunc {
 }
 
 func ProfileSession(c *gin.Context) {
-
 	session := sessions.Default(c)
 	userID := session.Get("userID").(string)
 	oid, _ := primitive.ObjectIDFromHex(userID)

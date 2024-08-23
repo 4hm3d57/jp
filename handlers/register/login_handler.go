@@ -49,6 +49,10 @@ func LoginHandler(c *gin.Context) {
 	session := sessions.Default(c)
 	session.Set("userID", user.ID.Hex())
 	session.Save()
+	if err := session.Save(); err != nil {
+		c.JSON(http.StatusInternalServerError, gin.H{"error": "failed to save session"})
+		return
+	}
 
 	// TODO: redirect to the assigned page
 	switch user.AccountType {

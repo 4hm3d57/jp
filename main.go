@@ -26,9 +26,11 @@ func main() {
 
 	r.LoadHTMLGlob("templates/*.html")
 
-	// r.Static("/register", "./templates/register")
+	r.Static("/register", "./templates/register")
 	// r.Static("/employer", "./templates/employer")
 	// r.Static("/employee", "./templates/employee")
+
+	// REGISTRATION ROUTING
 
 	r.GET("/", landingPages.LandingHomepage)
 
@@ -44,6 +46,8 @@ func main() {
 
 	r.POST("/signup", register.SignupHandler)
 
+	// LANDING PAGES ROUTING
+
 	r.GET("/home", landingPages.Homepage)
 	r.GET("/jobs", landingPages.JobPage)
 	r.GET("/employer", landingPages.EmployerPage)
@@ -53,14 +57,16 @@ func main() {
 		c.File("templates/contact.html")
 	})
 
-	r.POST("/contact", landingPages.ContactPage)
+	r.POST("/contact", landingPages.ContactPage, landingPages.EmployeeSession)
+
+	// EMPLOYEE ROUTING
 
 	// profile
 	r.GET("/profile", func(c *gin.Context) {
 		c.File("templates/employee/profile.html")
 	})
 
-	r.POST("/profile", employeeHandler.AuthMiddleWare(), employeeHandler.ProfileHandler, employeeHandler.ProfileSession)
+	r.POST("/profile", employeeHandler.AuthMiddleWare(), employeeHandler.ProfileHandler)
 
 	// academics
 	r.GET("/academics", func(c *gin.Context) {
@@ -104,9 +110,11 @@ func main() {
 
 	r.POST("/training", employeeHandler.TrainingHandler)
 
+	// EMPLOYER ROUTING
+
 	// employer profile
 	r.GET("/employer-profile", func(c *gin.Context) {
-		c.File("templates/employer/profile.html")
+		c.File("templates/employer/employer_profile.html")
 	})
 
 	r.POST("/employer-profile", employerHandler.EmployerProfileHandler)
@@ -118,8 +126,8 @@ func main() {
 
 	r.POST("/post-job", employerHandler.PostJobHandler)
 
-	// logout
+	// logout routing
 	r.GET("/logout", employeeHandler.LogoutHandler)
 
-	log.Fatal(r.Run(":9000"))
+	log.Fatal(r.Run(":7000"))
 }

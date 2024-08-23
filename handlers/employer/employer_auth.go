@@ -1,4 +1,4 @@
-package landing_pages
+package employer
 
 import (
 	"job/db"
@@ -22,7 +22,7 @@ func AuthMiddleWare() gin.HandlerFunc {
 	}
 }
 
-func EmployeeSession(c *gin.Context) {
+func EmployerProfileSession(c *gin.Context) {
 
 	session := sessions.Default(c)
 	userID := session.Get("userID").(string)
@@ -34,6 +34,6 @@ func EmployeeSession(c *gin.Context) {
 		return
 	}
 
-	c.HTML(http.StatusOK, "employee.html", gin.H{"user": user})
+	c.HTML(http.StatusOK, "employer_profile.html", gin.H{"user": user})
 
 }
